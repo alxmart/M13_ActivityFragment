@@ -11,7 +11,7 @@ data class Filme(
     val avaliacoes: Double,
     val diretor: String,
     val distribuidor: String
-) : Parcelable
+) : Parcelable   // RECOMENDADO !!! Usar nos próximos projetos !!
 
 
 /*class Filme(
