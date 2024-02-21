@@ -1,6 +1,7 @@
 
 package com.luizafmartinez.m13_activityfragment
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -22,13 +23,22 @@ class DetalhesActivity : AppCompatActivity() {
 
         if ( bundle != null) {
 
+            /*
             val filme = bundle.getString("filme")
             val classificacao = bundle.getInt("classificacao")
             val avaliacoes = bundle.getDouble("avaliacoes")
+            */
 
-            val resultado = "Filme: $filme  Class.: $classificacao  Aval.: $avaliacoes"
+            //val resultado = "Filme: $filme  Class.: $classificacao  Aval.: $avaliacoes"
 
-            textFilme.text = resultado
+            val filme = if ( Build.VERSION.SDK_INT  >= 33 ) { // Versão >= 33
+
+                bundle.getSerializable("filme", Filme::class.java)
+            } else {
+                bundle.getSerializable("filme") as Filme
+            }
+
+            textFilme.text = "${filme?.nome} - ${filme?.distribuidor}"
         }
 
         btnFechar.setOnClickListener {

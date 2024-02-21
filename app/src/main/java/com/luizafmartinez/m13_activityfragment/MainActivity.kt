@@ -27,9 +27,21 @@ class MainActivity : AppCompatActivity() {
             )
 
             // Passar parâmetros para outra activity
+           /*
             intent.putExtra("filme","The Witcher")
             intent.putExtra("classificacao",5)
             intent.putExtra("avaliacoes",9.2)
+            */
+
+            val filme = Filme(
+                "Sem limites",
+                "Teste",
+                4.8,
+                "Jamilton",
+                "Netflix"
+            )
+
+            intent.putExtra("filme", filme)
 
             startActivity( intent )
         }
