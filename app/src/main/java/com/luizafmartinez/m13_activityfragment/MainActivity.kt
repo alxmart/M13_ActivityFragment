@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Log.i("Ciclo_De_Vida", "onCreate")
+        Log.i("Ciclo_Vida", "onCreate")
 
         setContentView(R.layout.activity_main)
 
@@ -57,12 +57,4 @@ class MainActivity : AppCompatActivity() {
 
 
 }
-
-
-
-
-
-
-
-
 
