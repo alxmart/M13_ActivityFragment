@@ -16,8 +16,8 @@ class DetalhesActivity : AppCompatActivity() {
         btnFechar = findViewById(R.id.btn_fechar)
 
         btnFechar.setOnClickListener {
+
             finish()
         }
-
     }
 }
