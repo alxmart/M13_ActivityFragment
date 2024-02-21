@@ -26,6 +26,11 @@ class MainActivity : AppCompatActivity() {
                 DetalhesActivity::class.java
             )
 
+            // Passar parâmetros para outra activity
+            intent.putExtra("filme","The Witcher")
+            intent.putExtra("classificacao",5)
+            intent.putExtra("avaliacoes",9.2)
+
             startActivity( intent )
         }
     }
