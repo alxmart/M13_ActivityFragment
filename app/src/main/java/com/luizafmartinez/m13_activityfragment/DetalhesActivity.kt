@@ -32,10 +32,11 @@ class DetalhesActivity : AppCompatActivity() {
             //val resultado = "Filme: $filme  Class.: $classificacao  Aval.: $avaliacoes"
 
             val filme = if ( Build.VERSION.SDK_INT  >= 33 ) { // Versão >= 33
-
-                bundle.getSerializable("filme", Filme::class.java)
+                //bundle.getSerializable("filme", Filme::class.java)
+                bundle.getParcelable("filme", Filme::class.java)
             } else {
-                bundle.getSerializable("filme") as Filme
+                //bundle.getSerializable("filme") as Filme
+                bundle.getParcelable("filme")
             }
 
             textFilme.text = "${filme?.nome} - ${filme?.distribuidor}"
